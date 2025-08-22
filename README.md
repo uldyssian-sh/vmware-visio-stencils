@@ -78,7 +78,6 @@ This repository contains VMware Visio stencils that help you create professional
 ## Notes
 
 > **NOTE:** All official VMware diagrams are available in the product documentation found at [docs.vmware.com](https://docs.vmware.com).  
-:contentReference[oaicite:5]{index=5}
 
 ---
 

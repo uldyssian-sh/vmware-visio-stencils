@@ -41,7 +41,6 @@ This repository contains VMware Visio stencils that help you create professional
 3. Open the template (`*.vstm`) in Visio.
 4. In the Shapes pane, click **More Shapes** → **Open Stencil**, then select and open both stencil files.
 5. You can now drag and drop stencil shapes onto your canvas to build diagrams.  
-   :contentReference[oaicite:1]{index=1}
 
 ### OmniGraffle (macOS)
 

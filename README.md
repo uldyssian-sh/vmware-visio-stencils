@@ -82,10 +82,6 @@ This repository contains VMware Visio stencils that help you create professional
 
 ---
 
-## File Structure (Example)
-
----
-
 ## License
 
 This project is licensed under the **BSD-2 License**—see the `LICENSE` file for details.

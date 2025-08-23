@@ -1,6 +1,7 @@
 # VMware Visio Stencils
 
-**Author:** LT  
+**Author:** `LT`
+**Version:** `1.0`
 **License:** BSD-2 License
 
 ## Disclaimer

@@ -79,8 +79,6 @@ This repository contains VMware Visio stencils that help you create professional
 | Create text blocks first to check layout fit | Scale icons or shapes—they may appear distorted |
 | Ensure your design fits intended width before styling | Use non-standard paper formats, which may alter appearance |
 
-:contentReference[oaicite:4]{index=4}
-
 ---
 
 ## Notes

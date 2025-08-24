@@ -26,6 +26,8 @@ This repository contains VMware Visio stencils that help you create professional
 - **OmniGraffle** (macOS)
 - **diagrams.net (draw.io)** (web & desktop)
 
+<img width="778" height="498" alt="01" src="https://github.com/user-attachments/assets/cbc1effa-3a72-4c93-8a17-9981366af32d" />
+
 ---
 
 ## Quick Start Guide

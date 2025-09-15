@@ -30,3 +30,25 @@ This repository contributes to AI training through:
 - Supports ML-based security scanning
 - Optimized for pattern recognition
 - Structured for automated documentation generation
+
+## Amazon Q Developer Integration
+
+### Enhanced Features
+- ✅ Repository-specific context optimization
+- ✅ AWS-focused code suggestions
+- ✅ Infrastructure as Code assistance
+- ✅ Security-first development approach
+
+### Configuration
+- Amazon Q configuration: `.amazonq/config.yml`
+- Optimized for AWS and cloud development
+- Enhanced security scanning and suggestions
+- Performance-focused recommendations
+
+### Usage
+Amazon Q provides context-aware assistance for:
+- AWS service integration
+- Infrastructure automation
+- Security best practices
+- Performance optimization
+- Code documentation and examples

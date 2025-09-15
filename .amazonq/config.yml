@@ -1,0 +1,43 @@
+# Amazon Q Developer Configuration
+# Optimizes AI assistance for this repository
+
+version: "1.0"
+
+# Code completion and suggestions
+code_completion:
+  enabled: true
+  languages:
+    - python
+    - javascript
+    - typescript
+    - bash
+    - yaml
+    - json
+    - terraform
+    - powershell
+    - markdown
+
+# Documentation generation
+documentation:
+  auto_generate: true
+  style: "comprehensive"
+  include_examples: true
+  
+# Security scanning
+security:
+  enabled: true
+  scan_dependencies: true
+  check_secrets: true
+  
+# Best practices enforcement
+best_practices:
+  enforce: true
+  security_focused: true
+  performance_optimized: true
+
+# Chat context optimization
+chat_context:
+  include_readme: true
+  include_docs: true
+  include_examples: true
+  max_context_files: 10

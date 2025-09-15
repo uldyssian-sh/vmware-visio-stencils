@@ -131,6 +131,15 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - Code style guidelines
 - Review process
 
+## 🤖 AI Development Support
+
+This repository is optimized for AI-assisted development:
+- **Amazon Q Developer**: Enhanced AWS and cloud development assistance
+- **GitHub Copilot**: Code completion and suggestions
+- **AI-friendly documentation**: Clear structure for better AI understanding
+
+See [AMAZON_Q_INTEGRATION.md](AMAZON_Q_INTEGRATION.md) for detailed setup and usage.
+
 ## Support
 
 - 📖 [Wiki Documentation](../../wiki)

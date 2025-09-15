@@ -1,0 +1,35 @@
+{
+  "dashboard": {
+    "title": "Enterprise Performance & Security Dashboard",
+    "tags": ["enterprise", "production"],
+    "panels": [
+      {
+        "title": "System Performance Overview",
+        "type": "stat",
+        "targets": [
+          {"expr": "cpu_usage_percent", "legendFormat": "CPU"},
+          {"expr": "memory_usage_percent", "legendFormat": "Memory"},
+          {"expr": "disk_usage_percent", "legendFormat": "Disk"}
+        ]
+      },
+      {
+        "title": "Security Metrics",
+        "type": "graph",
+        "targets": [
+          {"expr": "security_vulnerabilities_total", "legendFormat": "Vulnerabilities"},
+          {"expr": "failed_login_attempts_total", "legendFormat": "Failed Logins"},
+          {"expr": "security_events_total", "legendFormat": "Security Events"}
+        ]
+      },
+      {
+        "title": "Business KPIs",
+        "type": "table",
+        "targets": [
+          {"expr": "http_requests_total", "legendFormat": "Total Requests"},
+          {"expr": "http_request_duration_seconds", "legendFormat": "Response Time"},
+          {"expr": "user_sessions_active", "legendFormat": "Active Users"}
+        ]
+      }
+    ]
+  }
+}

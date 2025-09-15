@@ -1,0 +1,25 @@
+# Snyk Configuration
+version: v1.0.0
+
+# Language settings
+language-settings:
+  javascript:
+    packageManager: npm
+  python:
+    packageManager: pip
+
+# Patch settings
+patch: {}
+
+# Ignore settings
+ignore: {}
+
+# Update settings
+update:
+  auto: true
+  schedule: "0 2 * * 1"  # Monday 2 AM
+  
+# Vulnerability settings
+vulnerability:
+  severity: high
+  autofix: true

@@ -6,7 +6,8 @@
 
 Copyright 2020-2021 VMware, Inc. All Rights Reserved.
 
-The BSD-2 license (the "License") set forth below applies to all parts of the project.  You may not use this file except in compliance with the License.
+The BSD-2 license (the "License") set forth below applies to all parts of the project.
+ You may not use this file except in compliance with the License.
 
 BSD-2 License
 
@@ -85,7 +86,8 @@ This repository contains VMware Visio stencils that help you create professional
 
 ## Notes
 
-> **NOTE:** All official VMware diagrams are available in the product documentation found at [docs.vmware.com](https://docs.vmware.com).  
+> **NOTE:** All official VMware diagrams are available in the product documentation found at [docs.vmware.com](https://docs.vmware.com).
+ 
 
 ---
 

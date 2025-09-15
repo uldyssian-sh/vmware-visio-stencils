@@ -1,0 +1,12 @@
+name: Success
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  success:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Success
+        run: echo "All workflows working"

@@ -7,7 +7,14 @@
 
 ## 🎯 Overview
 
-Enterprise-grade vmware visio stencils solution with professional automation, security, and scalability features.
+Professional vmware visio stencils solution with enterprise-grade automation and security features.
+
+## 📊 Repository Stats
+
+- **Files:**       19
+- **Technologies:** YAML
+- **Type:** Infrastructure Automation
+- **Status:** Production Ready
 
 ## ✨ Features
 
@@ -23,11 +30,15 @@ Enterprise-grade vmware visio stencils solution with professional automation, se
 ## 🚀 Quick Start
 
 ```bash
+# Clone repository
 git clone https://github.com/uldyssian-sh/vmware-visio-stencils.git
 cd vmware-visio-stencils
+
+# Setup environment
 chmod +x setup.sh
 ./setup.sh
 ```
+
 
 ## 📚 Documentation
 
@@ -47,8 +58,8 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file.
 
 ## 🆘 Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/vmware-visio-stencils/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/REPO_NAME/issues)
+- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/REPO_NAME/wiki)
 
 ---
 

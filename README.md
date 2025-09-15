@@ -1,5 +1,22 @@
 # VMware Visio Stencils
 
+## Table of Contents
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Support](#support)
+
+## Prerequisites
+
+Before using this project, ensure you have:
+- Required tools and dependencies
+- Proper access credentials
+- System requirements met
+
+
 **License:** `BSD-2 License`
 
 ## Disclaimer
@@ -106,4 +123,20 @@ LT — feel free to reach out via GitHub if you have questions or suggestions!
 The complete VMware Visio stencils package is available in the [Releases](https://github.com/uldyssian-sh/vmware-visio-stencils/releases) section.
 This keeps the repository fast to clone while providing easy access to all stencils.
 
+## Contributing
 
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on:
+- How to submit issues
+- How to propose changes
+- Code style guidelines
+- Review process
+
+## Support
+
+- 📖 [Wiki Documentation](../../wiki)
+- 💬 [Discussions](../../discussions)
+- 🐛 [Issue Tracker](../../issues)
+- 🔒 [Security Policy](SECURITY.md)
+
+---
+**Made with ❤️ for the community**

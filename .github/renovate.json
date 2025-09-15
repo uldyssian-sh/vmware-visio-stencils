@@ -1,0 +1,9 @@
+{
+  "extends": ["config:base"],
+  "schedule": ["before 6am on monday"],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "semanticCommits": "enabled",
+  "assignees": ["uldyssian-sh"],
+  "reviewers": ["uldyssian-sh"]
+}

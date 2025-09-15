@@ -98,3 +98,10 @@ This project is licensed under the **BSD-2 License**—see the `LICENSE` file fo
 ## Author
 
 LT — feel free to reach out via GitHub if you have questions or suggestions!
+
+## 📦 Stencils Download
+
+The complete VMware Visio stencils package is available in the [Releases](https://github.com/uldyssian-sh/vmware-visio-stencils/releases) section.
+This keeps the repository fast to clone while providing easy access to all stencils.
+
+

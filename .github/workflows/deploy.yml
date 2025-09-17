@@ -1,11 +1,15 @@
 name: Deploy
+
 on:
   push:
     branches: [main, master]
   workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: development
+    
     steps:
     - uses: actions/checkout@v4
     - name: Build site
@@ -15,24 +19,30 @@ jobs:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Repository Deployment</title>
+    <title>Development Deployment</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .header { color: #333; }
-        .info { background: #f5f5f5; padding: 20px; border-radius: 5px; }
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f8ff; }
+        .header { color: #2c5aa0; }
+        .info { background: #e6f3ff; padding: 20px; border-radius: 5px; border-left: 4px solid #2c5aa0; }
+        .env { background: #fff3cd; padding: 10px; border-radius: 3px; color: #856404; }
     </style>
 </head>
 <body>
-    <h1 class="header">Successfully Deployed</h1>
+    <h1 class="header">Development Environment</h1>
+    <div class="env">🚧 This is a development deployment</div>
     <div class="info">
         <p><strong>Repository:</strong> ${{ github.repository }}</p>
+        <p><strong>Environment:</strong> Development</p>
         <p><strong>Commit:</strong> ${{ github.sha }}</p>
         <p><strong>Deployed:</strong> $(date)</p>
+        <p><strong>URL:</strong> https://uldyssian-sh.github.io/REPO_NAME/</p>
     </div>
 </body>
 </html>
 HTML
-    - name: Deploy to Pages
+        # Replace REPO_NAME with actual repository name
+        sed -i "s/REPO_NAME/$repo_name/g" dist/index.html
+    - name: Deploy to Development
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

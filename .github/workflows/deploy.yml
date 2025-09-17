@@ -10,48 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v4
     
-    - name: Setup Node.js
-      if: hashFiles('package.json') != ''
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
-    
-    - name: Setup Python
-      if: hashFiles('requirements.txt') != ''
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-        cache: 'pip'
-    
-    - name: Install dependencies
-      run: |
-        if [ -f package.json ]; then
-          npm ci
-        elif [ -f requirements.txt ]; then
-          pip install -r requirements.txt
-        fi
-    
-    - name: Build
+    - name: Create deployment files
       run: |
         mkdir -p dist
-        if [ -f package.json ] && npm run build --if-present; then
-          echo "Node.js build completed"
-        elif [ -f requirements.txt ]; then
-          echo "Python project - no build needed"
-        else
-          echo "# ${{ github.repository }}" > dist/index.html
-          echo "<h1>Successfully deployed $(date)</h1>" >> dist/index.html
-          echo "<p>Repository: ${{ github.repository }}</p>" >> dist/index.html
-        fi
+        echo "<!DOCTYPE html>" > dist/index.html
+        echo "<html><head><title>${{ github.repository }}</title></head>" >> dist/index.html
+        echo "<body><h1>${{ github.repository }}</h1>" >> dist/index.html
+        echo "<p>Deployed: $(date)</p>" >> dist/index.html
+        echo "<p>Commit: ${{ github.sha }}</p>" >> dist/index.html
+        echo "</body></html>" >> dist/index.html
     
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
-        force_orphan: true

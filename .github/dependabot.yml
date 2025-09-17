@@ -3,23 +3,5 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-    
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+      interval: "monthly"
+    open-pull-requests-limit: 3

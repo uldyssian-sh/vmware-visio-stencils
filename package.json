@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/uldyssian-sh/vmware-visio-stencils#readme",
   "devDependencies": {
-    "prettier": "^3.0.0",
+    "prettier": "^2.8.0",
     "eslint": "^8.0.0"
   }
 }

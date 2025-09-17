@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,32 +24,180 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Build site
+      - name: Build professional site
         run: |
           mkdir -p _site
-          echo "<!DOCTYPE html>
-          <html>
-          <head>
-              <title>vmware-visio-stencils</title>
-              <meta charset='UTF-8'>
-          </head>
-          <body>
-              <h1>vmware-visio-stencils</h1>
-              <p>✅ Successfully deployed!</p>
-              <p>Repository: <a href='https://github.com/uldyssian-sh/vmware-visio-stencils'>uldyssian-sh/vmware-visio-stencils</a></p>
-          </body>
-          </html>" > _site/index.html
+          cat > _site/index.html << 'HTML'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vmware-visio-stencils | Enterprise Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6; 
+            color: #1a202c;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 2rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            font-weight: 400;
+        }
+        .status {
+            display: inline-flex;
+            align-items: center;
+            background: #48bb78;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        .status::before {
+            content: "✓";
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .info-card {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .info-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+        .links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .card { padding: 2rem; }
+            .title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="status">Successfully Deployed</div>
+                <h1 class="title">vmware-visio-stencils</h1>
+                <p class="subtitle">Enterprise Infrastructure Solution</p>
+            </div>
+            
+            <div class="grid">
+                <div class="info-card">
+                    <div class="info-title">📋 Repository</div>
+                    <p>uldyssian-sh/vmware-visio-stencils</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-title">🚀 Status</div>
+                    <p>Active & Deployed</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-title">🌐 Environment</div>
+                    <p>GitHub Pages</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-title">📅 Last Updated</div>
+                    <p id="timestamp"></p>
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="https://github.com/uldyssian-sh/vmware-visio-stencils" class="btn">
+                    📂 View Source
+                </a>
+                <a href="https://github.com/uldyssian-sh/vmware-visio-stencils/blob/main/README.md" class="btn">
+                    📖 Documentation
+                </a>
+                <a href="https://github.com/uldyssian-sh/vmware-visio-stencils/issues" class="btn">
+                    🐛 Report Issue
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>Powered by GitHub Pages | Maintained by <strong>uldyssian-sh</strong></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
+HTML
       
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: development
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4

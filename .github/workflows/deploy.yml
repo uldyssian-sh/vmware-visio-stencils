@@ -1,31 +1,39 @@
 name: Deploy
-
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Create deployment files
+    - uses: actions/checkout@v4
+    - name: Build site
       run: |
         mkdir -p dist
-        echo "<!DOCTYPE html>" > dist/index.html
-        echo "<html><head><title>${{ github.repository }}</title></head>" >> dist/index.html
-        echo "<body><h1>${{ github.repository }}</h1>" >> dist/index.html
-        echo "<p>Deployed: $(date)</p>" >> dist/index.html
-        echo "<p>Commit: ${{ github.sha }}</p>" >> dist/index.html
-        echo "</body></html>" >> dist/index.html
-    
-    - name: Deploy to GitHub Pages
+        cat > dist/index.html << 'HTML'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repository Deployment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { color: #333; }
+        .info { background: #f5f5f5; padding: 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1 class="header">Successfully Deployed</h1>
+    <div class="info">
+        <p><strong>Repository:</strong> ${{ github.repository }}</p>
+        <p><strong>Commit:</strong> ${{ github.sha }}</p>
+        <p><strong>Deployed:</strong> $(date)</p>
+    </div>
+</body>
+</html>
+HTML
+    - name: Deploy to Pages
       uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist

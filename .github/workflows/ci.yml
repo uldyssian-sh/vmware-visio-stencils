@@ -1,23 +1,17 @@
 name: CI
-
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
-
+    branches: [main, master]
 jobs:
   test:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Run basic checks
+    - uses: actions/checkout@v4
+    - name: Basic validation
       run: |
         echo "Repository: ${{ github.repository }}"
         echo "Branch: ${{ github.ref }}"
-        echo "Commit: ${{ github.sha }}"
         ls -la
-        echo "✅ Basic checks passed"
+        echo "CI passed successfully"

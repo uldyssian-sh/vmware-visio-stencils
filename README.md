@@ -1,66 +1,117 @@
-# vmware visio stencils
+# VMware Visio Stencils Collection
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/uldyssian-sh/vmware-visio-stencils)](https://github.com/uldyssian-sh/vmware-visio-stencils/issues)
-[![GitHub stars](https://img.shields.io/github/stars/uldyssian-sh/vmware-visio-stencils)](https://github.com/uldyssian-sh/vmware-visio-stencils/stargazers)
-[![Security](https://img.shields.io/badge/Security-Enterprise-blue.svg)](SECURITY.md)
+<div align="center">
+  <img src="https://logos-world.net/wp-content/uploads/2021/02/VMware-Logo.png" alt="VMware Visio" width="300"/>
+  
+  [![Visio](https://img.shields.io/badge/Microsoft-Visio-0078D4.svg)](https://www.microsoft.com/en-us/microsoft-365/visio/)
+  [![VMware](https://img.shields.io/badge/VMware-Products-00A1C9.svg)](https://www.vmware.com/)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+</div>
 
-## 🎯 Overview
+## 🎨 Overview
 
-Professional vmware visio stencils solution with enterprise-grade automation and security features.
+Comprehensive collection of VMware Visio stencils for creating professional infrastructure diagrams. Includes all major VMware products and solutions with high-quality icons.
 
-## 📊 Repository Stats
+## 📦 Stencil Categories
 
-- **Files:**       19
-- **Technologies:** YAML
-- **Type:** Infrastructure Automation
-- **Status:** Production Ready
+### Core Infrastructure
+- **vSphere**: ESXi, vCenter, VMs, Storage
+- **vSAN**: Distributed storage components
+- **NSX**: Network virtualization and security
+- **vRealize Suite**: Operations, automation, orchestration
 
-## ✨ Features
+### Cloud Solutions
+- **VMware Cloud on AWS**: Hybrid cloud components
+- **Cloud Foundation**: SDDC building blocks
+- **Tanzu**: Kubernetes and container platform
+- **Carbon Black**: Endpoint security
 
-- 🏗️ **Enterprise Architecture** - Production-ready infrastructure
-- 🔒 **Zero-Trust Security** - Comprehensive security controls
-- 🚀 **CI/CD Automation** - Automated deployment pipelines
-- 📊 **Monitoring & Observability** - Complete visibility
-- 🤖 **AI Integration** - GitHub Copilot & Amazon Q
-- 🔄 **Self-Healing** - Automatic error recovery
-- 📈 **Performance Optimized** - High-performance configurations
-- 🛡️ **Compliance Ready** - SOC2, GDPR, HIPAA standards
+### Legacy Products
+- **View/Horizon**: Virtual desktop infrastructure
+- **Site Recovery Manager**: Disaster recovery
+- **vCloud Director**: Cloud management platform
 
 ## 🚀 Quick Start
 
+### Download Stencils
 ```bash
 # Clone repository
 git clone https://github.com/uldyssian-sh/vmware-visio-stencils.git
 cd vmware-visio-stencils
 
-# Setup environment
-chmod +x setup.sh
-./setup.sh
+# Extract stencils
+unzip "VMware-Stencils-2024.zip"
 ```
 
+### Install in Visio
+1. Open Microsoft Visio
+2. Go to **File > Options > Advanced**
+3. Click **File Locations**
+4. Add path to downloaded stencils folder
+5. Restart Visio
+6. Access stencils from **More Shapes > My Shapes**
+
+## 🎯 Diagram Examples
+
+### vSphere Infrastructure
+![vSphere Diagram](https://via.placeholder.com/600x400/00A1C9/FFFFFF?text=vSphere+Infrastructure+Diagram)
+
+### NSX Network Architecture
+![NSX Diagram](https://via.placeholder.com/600x400/4A90E2/FFFFFF?text=NSX+Network+Architecture)
+
+### Cloud Foundation SDDC
+![VCF Diagram](https://via.placeholder.com/600x400/2E8B57/FFFFFF?text=Cloud+Foundation+SDDC)
+
+## 📁 Stencil Structure
+
+```
+VMware-Stencils/
+├── 🏗️ Infrastructure/
+│   ├── vSphere-8.0.vss
+│   ├── vSAN-8.0.vss
+│   └── NSX-4.0.vss
+├── ☁️ Cloud/
+│   ├── VMC-on-AWS.vss
+│   ├── Cloud-Foundation.vss
+│   └── Tanzu.vss
+├── 🔧 Management/
+│   ├── vRealize-Operations.vss
+│   ├── vRealize-Automation.vss
+│   └── vRealize-Orchestrator.vss
+└── 🛡️ Security/
+    ├── Carbon-Black.vss
+    ├── NSX-Security.vss
+    └── Identity-Manager.vss
+```
+
+## 🎨 Design Guidelines
+
+### Color Scheme
+- **Primary Blue**: #00A1C9 (VMware brand color)
+- **Secondary Gray**: #5A5A5A (text and borders)
+- **Accent Green**: #2E8B57 (success states)
+- **Warning Orange**: #FF8C00 (alerts and warnings)
+
+### Icon Standards
+- **Size**: 32x32 pixels minimum
+- **Format**: Vector-based (SVG preferred)
+- **Style**: Consistent with VMware design language
+- **Naming**: Product-Version-Component.svg
 
 ## 📚 Documentation
 
-- [Installation Guide](docs/installation.md)
-- [Configuration Reference](docs/configuration.md)
-- [API Documentation](docs/api.md)
-- [Troubleshooting](docs/troubleshooting.md)
-- [Security Policy](SECURITY.md)
+- [Installation Guide](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Installation)
+- [Diagram Best Practices](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Best-Practices)
+- [Custom Stencil Creation](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Custom-Stencils)
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+1. Fork the repository
+2. Create new stencil or update existing
+3. Follow design guidelines
+4. Test in Visio
+5. Submit pull request with examples
 
 ## 📄 License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file.
-
-## 🆘 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/uldyssian-sh/REPO_NAME/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/uldyssian-sh/REPO_NAME/wiki)
-
----
-
-⭐ **Star this repository if you find it helpful!**
+MIT License - see [LICENSE](LICENSE) file for details.

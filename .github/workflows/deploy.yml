@@ -14,28 +14,43 @@ jobs:
       uses: actions/checkout@v4
     
     - name: Setup Node.js
+      if: hashFiles('package.json') != ''
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        
+        cache: 'npm'
+    
     - name: Setup Python
+      if: hashFiles('requirements.txt') != ''
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
+        cache: 'pip'
     
     - name: Install dependencies
       run: |
-        if [ -f package.json ]; then npm install; fi
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f package.json ]; then
+          npm ci
+        elif [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
     
     - name: Build
       run: |
-        if [ -f package.json ] && [ -f "$(npm bin)/build" ]; then npm run build; fi
-        echo "Build completed for ${{ github.repository }}"
+        mkdir -p dist
+        if [ -f package.json ] && npm run build --if-present; then
+          echo "Node.js build completed"
+        elif [ -f requirements.txt ]; then
+          echo "Python project - no build needed"
+        else
+          echo "# ${{ github.repository }}" > dist/index.html
+          echo "<h1>Successfully deployed $(date)</h1>" >> dist/index.html
+          echo "<p>Repository: ${{ github.repository }}</p>" >> dist/index.html
+        fi
     
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist

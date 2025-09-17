@@ -10,31 +10,46 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-    
-    - name: Create site
-      run: |
-        mkdir -p _site
-        echo '<!DOCTYPE html>
-        <html>
-        <head><title>REPO_NAME</title></head>
-        <body>
-        <h1>REPO_NAME</h1>
-        <p>Successfully deployed!</p>
-        <p>Repository: <a href="https://github.com/uldyssian-sh/REPO_NAME">uldyssian-sh/REPO_NAME</a></p>
-        </body>
-        </html>' > _site/index.html
-        sed -i "s/REPO_NAME/$repo_name/g" _site/index.html
-    
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3
-    
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Build site
+        run: |
+          mkdir -p _site
+          echo "<!DOCTYPE html>
+          <html>
+          <head>
+              <title>vmware-visio-stencils</title>
+              <meta charset='UTF-8'>
+          </head>
+          <body>
+              <h1>vmware-visio-stencils</h1>
+              <p>✅ Successfully deployed!</p>
+              <p>Repository: <a href='https://github.com/uldyssian-sh/vmware-visio-stencils'>uldyssian-sh/vmware-visio-stencils</a></p>
+          </body>
+          </html>" > _site/index.html
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

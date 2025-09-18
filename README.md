@@ -104,6 +104,7 @@ VMware-Stencils/
 - [Configuration](docs/configuration.md)
 - [API Reference](docs/api.md)
 - [Troubleshooting](docs/troubleshooting.md)
+- [Security Policy](SECURITY.md)
 
 ## 🤝 Contributing
 
@@ -112,6 +113,18 @@ VMware-Stencils/
 3. Follow design guidelines
 4. Test in Visio
 5. Submit pull request with examples
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
+## 🔒 Security
+
+This project follows security best practices:
+- Automated vulnerability scanning with Trivy
+- Dependency updates via Dependabot
+- Signed commits required
+- Regular security audits
+
+Report security issues via [Security Advisories](https://github.com/uldyssian-sh/vmware-visio-stencils/security).
 
 ## 📄 License
 

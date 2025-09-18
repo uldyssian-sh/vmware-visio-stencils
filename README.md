@@ -1,7 +1,7 @@
 # VMware Visio Stencils Collection
 
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Vmware_logo.svg" alt="VMware Visio" width="300"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg" alt="VMware Visio" width="300"/>
   
   [![Visio](https://img.shields.io/badge/Microsoft-Visio-0078D4.svg)](https://www.microsoft.com/en-us/microsoft-365/visio/)
   [![VMware](https://img.shields.io/badge/VMware-Products-00A1C9.svg)](https://www.vmware.com/)
@@ -54,13 +54,13 @@ unzip "VMware-Stencils-2024.zip"
 ## 🎯 Diagram Examples
 
 ### vSphere Infrastructure
-![vSphere Diagram](https://via.placeholder.com/600x400/00A1C9/FFFFFF?text=vSphere+Infrastructure+Diagram)
+![vSphere Diagram](https://img.shields.io/badge/vSphere-Infrastructure-00A1C9?style=for-the-badge&logo=vmware)
 
 ### NSX Network Architecture
-![NSX Diagram](https://via.placeholder.com/600x400/4A90E2/FFFFFF?text=NSX+Network+Architecture)
+![NSX Diagram](https://img.shields.io/badge/NSX-Network-4A90E2?style=for-the-badge&logo=vmware)
 
 ### Cloud Foundation SDDC
-![VCF Diagram](https://via.placeholder.com/600x400/2E8B57/FFFFFF?text=Cloud+Foundation+SDDC)
+![VCF Diagram](https://img.shields.io/badge/Cloud_Foundation-SDDC-2E8B57?style=for-the-badge&logo=vmware)
 
 ## 📁 Stencil Structure
 

@@ -4,9 +4,12 @@
   "description": "Enterprise automation and management solution",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests specified\" && exit 0",
-    "lint": "echo \"No linting configured\" && exit 0",
-    "build": "echo \"No build process\" && exit 0"
+    "test": "python -m pytest tests/ -v",
+    "lint": "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics",
+    "build": "python -m py_compile main.py",
+    "start": "python main.py",
+    "docker:build": "docker build -t vmware-visio-stencils .",
+    "docker:run": "docker run -p 8080:8080 vmware-visio-stencils"
   },
   "repository": {
     "type": "git",

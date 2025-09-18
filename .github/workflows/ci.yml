@@ -4,14 +4,43 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, '3.10', '3.11']
+    
     steps:
-    - uses: actions/checkout@v3
-    - name: Basic validation
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
       run: |
-        echo "Repository: ${{ github.repository }}"
-        echo "Branch: ${{ github.ref }}"
-        ls -la
-        echo "CI passed successfully"
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest flake8 pytest-cov
+    
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Test with pytest
+      run: |
+        pytest tests/ -v --cov=. --cov-report=xml
+    
+    - name: Build check
+      run: |
+        python -m py_compile main.py
+        python main.py
+    
+    - name: Docker build test
+      run: |
+        docker build -t vmware-visio-stencils-test .
+        echo "Docker build successful"

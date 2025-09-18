@@ -7,19 +7,17 @@ from pathlib import Path
 
 __version__ = "1.0.0"
 
-def setup_logging():
-    """Configure logging"""
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    )
+# Configure logging at module level
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 
 class Application:
     """Main application class"""
     
     def __init__(self, config=None):
         self.config = config or {}
-        setup_logging()
         self.logger = logging.getLogger(__name__)
     
     def run(self):

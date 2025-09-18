@@ -41,11 +41,11 @@ jobs:
         <h1>vmware-visio-stencils</h1>
         <p class="status">✅ Development deployment successful</p>
         <p><strong>Environment:</strong> Development</p>
-        <p><strong>Repository:</strong> uldyssian-sh/vmware-visio-stencils</p>
+        <p><strong>Repository:</strong> ${{ github.repository }}</p>
         <p><strong>Deployed:</strong> <span id="time"></span></p>
         <div class="links">
-            <a href="https://github.com/uldyssian-sh/vmware-visio-stencils">View Repository</a>
-            <a href="https://github.com/uldyssian-sh/vmware-visio-stencils/blob/main/README.md">Documentation</a>
+            <a href="https://github.com/${{ github.repository }}">View Repository</a>
+            <a href="https://github.com/${{ github.repository }}/blob/main/README.md">Documentation</a>
         </div>
     </div>
     <script>document.getElementById('time').textContent = new Date().toLocaleString();</script>

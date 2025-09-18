@@ -1,0 +1,24 @@
+name: Weekly Activity
+on:
+  schedule:
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  weekly-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update weekly activity
+        run: |
+          echo "Weekly activity: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log
+          echo "Repository: ${{ github.repository }}" >> .github/weekly-activity.log
+          echo "---" >> .github/weekly-activity.log
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/weekly-activity.log
+          git diff --staged --quiet || git commit -m "Weekly activity: $(date +%Y-%m-%d)"
+          git push

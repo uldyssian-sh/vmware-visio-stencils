@@ -1,11 +1,11 @@
 # VMware Visio Stencils Collection
 
 <div align="center">
-  <img src="https://logos-world.net/wp-content/uploads/2021/02/VMware-Logo.png" alt="VMware Visio" width="300"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Vmware_logo.svg" alt="VMware Visio" width="300"/>
   
   [![Visio](https://img.shields.io/badge/Microsoft-Visio-0078D4.svg)](https://www.microsoft.com/en-us/microsoft-365/visio/)
   [![VMware](https://img.shields.io/badge/VMware-Products-00A1C9.svg)](https://www.vmware.com/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/uldyssian-sh/vmware-visio-stencils/blob/main/LICENSE)
 </div>
 
 ## 🎨 Overview
@@ -100,9 +100,10 @@ VMware-Stencils/
 
 ## 📚 Documentation
 
-- [Installation Guide](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Installation)
-- [Diagram Best Practices](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Best-Practices)
-- [Custom Stencil Creation](https://github.com/uldyssian-sh/vmware-visio-stencils/wiki/Custom-Stencils)
+- [Installation Guide](docs/installation.md)
+- [Configuration](docs/configuration.md)
+- [API Reference](docs/api.md)
+- [Troubleshooting](docs/troubleshooting.md)
 
 ## 🤝 Contributing
 

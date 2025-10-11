@@ -32,9 +32,6 @@ Comprehensive collection of VMware Visio stencils for creating professional infr
 # Clone repository
 git clone https://github.com/uldyssian-sh/vmware-visio-stencils.git
 cd vmware-visio-stencils
-
-# Extract stencils
-unzip "VMware-Stencils-2024.zip"
 ```
 
 ### Install in Visio
@@ -48,13 +45,19 @@ unzip "VMware-Stencils-2024.zip"
 ## 🎯 Diagram Examples
 
 ### vSphere Infrastructure
-![vSphere Diagram](https://img.shields.io/badge/vSphere-Infrastructure-00A1C9?style=for-the-badge&logo=vmware)
+- ESXi hosts and clusters
+- vCenter Server management
+- Virtual machine components
 
-### NSX Network Architecture
-![NSX Diagram](https://img.shields.io/badge/NSX-Network-4A90E2?style=for-the-badge&logo=vmware)
+### NSX Network Architecture  
+- Network virtualization layers
+- Security micro-segmentation
+- Load balancing components
 
 ### Cloud Foundation SDDC
-![VCF Diagram](https://img.shields.io/badge/Cloud_Foundation-SDDC-2E8B57?style=for-the-badge&logo=vmware)
+- Management domain design
+- Workload domain architecture
+- Integrated stack components
 
 ## 📁 Stencil Structure
 

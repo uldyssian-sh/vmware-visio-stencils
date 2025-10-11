@@ -1,10 +1,6 @@
 # VMware Visio Stencils Collection
 
-<div align="center">
-  [![Visio](https://img.shields.io/badge/Microsoft-Visio-0078D4.svg)](https://www.microsoft.com/en-us/microsoft-365/visio/)
-  [![VMware](https://img.shields.io/badge/VMware-Products-00A1C9.svg)](https://www.vmware.com/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/uldyssian-sh/vmware-visio-stencils/blob/main/LICENSE)
-</div>
+
 
 ## 🎨 Overview
 

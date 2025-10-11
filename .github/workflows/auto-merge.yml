@@ -19,19 +19,28 @@ jobs:
           script: |
             const pr = context.payload.pull_request;
             
-            // Only auto-merge patch and minor updates
-            if (pr.title.includes('patch') || pr.title.includes('minor')) {
-              await github.rest.pulls.createReview({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: pr.number,
-                event: 'APPROVE'
-              });
-              
-              await github.rest.pulls.merge({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: pr.number,
-                merge_method: 'squash'
-              });
+            try {
+              // Only auto-merge patch and minor updates
+              if (pr.title.includes('patch') || pr.title.includes('minor')) {
+                await github.rest.pulls.createReview({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  event: 'APPROVE'
+                });
+                
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  merge_method: 'squash'
+                });
+                
+                console.log(`Successfully merged PR #${pr.number}`);
+              } else {
+                console.log(`Skipping PR #${pr.number} - not a patch/minor update`);
+              }
+            } catch (error) {
+              console.error(`Failed to process PR #${pr.number}:`, error.message);
+              process.exit(1);
             }

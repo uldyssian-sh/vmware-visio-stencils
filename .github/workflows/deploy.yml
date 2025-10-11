@@ -1,58 +1,44 @@
-name: Deploy Development
+name: Stencil Validation
 
 on:
   push:
     branches: [main, master]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  deploy-dev:
+  validate:
     runs-on: ubuntu-latest
-    environment:
-      name: development
-      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/configure-pages@v4
-      - name: Build development site
+      
+      - name: Validate stencil collection
         run: |
-          mkdir _site
-          cat > _site/index.html << 'HTML'
-<!DOCTYPE html>
-<html>
-<head>
-    <title>vmware-visio-stencils - Development</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f8ff; }
-        .dev-banner { background: #ffd700; padding: 10px; text-align: center; font-weight: bold; }
-        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .status { color: #28a745; font-weight: bold; }
-        .links a { display: inline-block; margin: 10px; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
-    </style>
-</head>
-<body>
-    <div class="dev-banner">🚧 DEVELOPMENT ENVIRONMENT 🚧</div>
-    <div class="container">
-        <h1>vmware-visio-stencils</h1>
-        <p class="status">✅ Development deployment successful</p>
-        <p><strong>Environment:</strong> Development</p>
-        <p><strong>Repository:</strong> ${{ github.repository }}</p>
-        <p><strong>Deployed:</strong> <span id="time"></span></p>
-        <div class="links">
-            <a href="https://github.com/${{ github.repository }}">View Repository</a>
-            <a href="https://github.com/${{ github.repository }}/blob/main/README.md">Documentation</a>
-        </div>
-    </div>
-    <script>document.getElementById('time').textContent = new Date().toLocaleString();</script>
-</body>
-</html>
-HTML
-      - uses: actions/upload-pages-artifact@v3
-      - name: Deploy to Development
-        id: deployment
-        uses: actions/deploy-pages@v4
+          echo "🎨 Validating VMware Visio Stencils Collection..."
+          
+          # Check ZIP file
+          if [ -f "VMware-Stencils-2024.zip" ]; then
+            echo "✅ Found VMware-Stencils-2024.zip ($(du -h VMware-Stencils-2024.zip | cut -f1))"
+          else
+            echo "❌ Missing VMware-Stencils-2024.zip"
+            exit 1
+          fi
+          
+          # Validate directories
+          for dir in stencils icons omnigraffle; do
+            if [ -d "$dir" ]; then
+              count=$(find "$dir" -type f | wc -l)
+              echo "✅ $dir/ directory: $count files"
+            else
+              echo "❌ Missing $dir/ directory"
+              exit 1
+            fi
+          done
+          
+          # Check specific file types
+          echo "📊 File breakdown:"
+          echo "  Visio files (.vssx/.vstm): $(find stencils/ -name '*.vssx' -o -name '*.vstm' | wc -l)"
+          echo "  SVG icons: $(find icons/ -name '*.svg' | wc -l)"
+          echo "  OmniGraffle files: $(find omnigraffle/ -name '*.gstencil' -o -name '*.clr' | wc -l)"
+          
+          echo "🎉 Stencil collection validation completed successfully!"

@@ -15,7 +15,7 @@ jobs:
     
     - name: Validate stencil files
       run: |
-        echo "Validating VMware stencil files..."
+        echo "🎨 Validating VMware stencil files..."
         
         # Check if required directories exist
         if [ ! -d "stencils" ]; then
@@ -48,3 +48,22 @@ jobs:
         echo "✅ Found $ICON_COUNT SVG icon files"
         echo "✅ Found $OMNI_COUNT OmniGraffle files"
         echo "✅ All stencil files validated successfully"
+        
+        # Validate SVG files
+        echo "🔍 Validating SVG file integrity..."
+        INVALID_SVG=0
+        for svg in icons/*.svg; do
+          if ! xmllint --noout "$svg" 2>/dev/null; then
+            echo "❌ Invalid SVG: $svg"
+            INVALID_SVG=$((INVALID_SVG + 1))
+          fi
+        done
+        
+        if [ $INVALID_SVG -eq 0 ]; then
+          echo "✅ All SVG files are valid"
+        else
+          echo "❌ Found $INVALID_SVG invalid SVG files"
+          exit 1
+        fi
+        
+        echo "🎉 Stencil collection validation completed successfully!"

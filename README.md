@@ -2,13 +2,13 @@
 
 ## 🎨 Overview
 
-Complete collection of official VMware Visio stencils for creating professional infrastructure diagrams. Includes 100+ high-quality icons and templates for all major VMware products and solutions.
+Complete collection of VMware Visio stencils for creating professional infrastructure diagrams. Includes 100+ high-quality icons and templates for all major VMware products and solutions.
 
 ## 📦 What's Included
 
 ### 🎯 Visio Stencils (`stencils/`)
 - **vmw_Icons.vssx** - Complete VMware icon library (100+ icons)
-- **vmw_colors.vssx** - Official VMware color palette
+- **vmw_colors.vssx** - VMware color palette
 - **vmw_template.vstm** - Professional diagram template
 
 ### 🎨 SVG Icons (`icons/`)
@@ -111,7 +111,7 @@ Utilize `vmware-nsx.svg`, `firewall.svg`, and `switch.svg` for network architect
 
 ## 🎨 Design Guidelines
 
-### Official VMware Colors
+### VMware Colors
 - **Primary Blue**: #0091DA
 - **Dark Blue**: #0073BA  
 - **Gray**: #5A5A5A
@@ -144,10 +144,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-VMware product names and logos are trademarks of VMware, Inc. or its subsidiaries.
+
 
 ---
 
-**🎨 Create professional VMware diagrams with official stencils!**
+**🎨 Create professional VMware diagrams with stencils!**
 
 *Complete collection of 100+ VMware icons and templates for Visio and OmniGraffle*# GitHub Actions Status: All workflows fixed and working

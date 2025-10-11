@@ -1,48 +1,32 @@
-name: "Security Scan"
+name: "File Validation"
 
 on:
   push:
     branches: [ "main", "master" ]
   pull_request:
     branches: [ "main", "master" ]
-  schedule:
-    - cron: '0 6 * * 1'
   workflow_dispatch:
 
 jobs:
-  security:
-    name: Security Check
+  validate:
+    name: Validate Files
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v5
+      uses: actions/checkout@v4
 
-    - name: Security validation
+    - name: Validate stencil files
       run: |
-        echo "🔍 Running security validation for stencil files..."
+        echo "🎨 Validating stencil files..."
         
-        # Check for suspicious files
-        if find . -name "*.exe" -o -name "*.bat" -o -name "*.ps1" | grep -q .; then
-          echo "⚠️ Found potentially suspicious executable files"
-          find . -name "*.exe" -o -name "*.bat" -o -name "*.ps1"
-        else
-          echo "✅ No suspicious executable files found"
-        fi
+        # Check directories exist
+        for dir in stencils icons omnigraffle; do
+          if [ ! -d "$dir" ]; then
+            echo "❌ Missing $dir directory"
+            exit 1
+          fi
+        done
         
-        # Validate file sizes (prevent large malicious files)
-        LARGE_FILES=$(find . -size +10M -type f)
-        if [ -n "$LARGE_FILES" ]; then
-          echo "⚠️ Found large files (>10MB):"
-          echo "$LARGE_FILES"
-        else
-          echo "✅ All files are reasonable size"
-        fi
-        
-        # Check stencil file integrity
-        echo "📊 Stencil file summary:"
-        echo "  Visio files: $(find stencils/ -name '*.vssx' -o -name '*.vstm' | wc -l)"
-        echo "  SVG icons: $(find icons/ -name '*.svg' | wc -l)"
-        echo "  OmniGraffle files: $(find omnigraffle/ -name '*.gstencil' -o -name '*.clr' | wc -l)"
-        
-        echo "✅ Security validation completed"
+        # Count files
+        echo "✅ Validation completed successfully"

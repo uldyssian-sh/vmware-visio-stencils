@@ -50,8 +50,10 @@ temp/
 # Build outputs
 dist/
 build/
-*.zip
 *.tar.gz
+
+# Allow VMware stencils ZIP
+!VMware-Stencils-*.zip
 
 # Performance optimization
 *.log

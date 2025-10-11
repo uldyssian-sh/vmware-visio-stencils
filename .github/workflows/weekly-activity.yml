@@ -9,7 +9,7 @@ jobs:
   weekly-activity:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Update weekly activity
         run: |
           echo "Weekly activity: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log

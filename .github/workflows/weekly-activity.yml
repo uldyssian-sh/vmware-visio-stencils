@@ -16,14 +16,8 @@ jobs:
           echo "Weekly activity: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log
           echo "Repository: ${{ github.repository }}" >> .github/weekly-activity.log
           echo "---" >> .github/weekly-activity.log
-      - name: Commit changes
+      - name: Log activity
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .github/weekly-activity.log
-          if ! git diff --staged --quiet; then
-            git commit -m "Weekly activity: $(date +%Y-%m-%d)"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+          echo "Weekly activity logged: $(date +%Y-%m-%d\ %H:%M:%S)"
+          echo "Repository: ${{ github.repository }}"
+          echo "✅ Weekly activity check completed"

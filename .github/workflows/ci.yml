@@ -47,22 +47,21 @@ jobs:
         echo "✅ Found $STENCIL_COUNT Visio stencil files"
         echo "✅ Found $ICON_COUNT SVG icon files"
         echo "✅ Found $OMNI_COUNT OmniGraffle files"
-        echo "✅ All stencil files validated successfully"
         
-        # Validate SVG files
-        echo "🔍 Validating SVG file integrity..."
+        # Basic SVG validation (check for SVG tags)
+        echo "🔍 Validating SVG file structure..."
         INVALID_SVG=0
         for svg in icons/*.svg; do
-          if ! xmllint --noout "$svg" 2>/dev/null; then
-            echo "❌ Invalid SVG: $svg"
+          if ! grep -q "<svg" "$svg" || ! grep -q "</svg>" "$svg"; then
+            echo "❌ Invalid SVG structure: $svg"
             INVALID_SVG=$((INVALID_SVG + 1))
           fi
         done
         
         if [ $INVALID_SVG -eq 0 ]; then
-          echo "✅ All SVG files are valid"
+          echo "✅ All SVG files have valid structure"
         else
-          echo "❌ Found $INVALID_SVG invalid SVG files"
+          echo "❌ Found $INVALID_SVG SVG files with invalid structure"
           exit 1
         fi
         

@@ -1,23 +1,8 @@
-# GitHub Copilot Configuration
-# Optimizes AI assistance for this repository
-
-suggestions:
-  enabled: true
-  
-code_completion:
-  enabled: true
-  languages:
-    - python
-    - javascript
-    - bash
-    - yaml
-    - terraform
-    - powershell
-
-documentation:
-  auto_generate: true
-  style: "comprehensive"
-  
-best_practices:
-  enforce: true
-  security_focused: true
+version: 2
+github_models:
+  - gpt-4
+  - gpt-3.5-turbo
+copilot:
+  enable_auto_completions: true
+  enable_suggestions: true
+  enable_chat: true

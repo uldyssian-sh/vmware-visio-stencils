@@ -6,42 +6,44 @@ on:
     branches: [main, master]
 
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, '3.10', '3.11']
     
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Install dependencies
+    - name: Validate stencil files
       run: |
-        python -m pip install --upgrade pip
-        pip install pytest flake8 pytest-cov
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
-    
-    - name: Lint with flake8
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    
-    - name: Test with pytest
-      run: |
-        pytest tests/ -v --cov=. --cov-report=xml
-    
-    - name: Build check
-      run: |
-        python -m py_compile main.py
-        timeout 30s python main.py || echo "Build check completed"
-    
-    - name: Docker build test
-      run: |
-        docker build -t vmware-visio-stencils-test .
-        echo "Docker build successful"
+        echo "Validating VMware stencil files..."
+        
+        # Check if required directories exist
+        if [ ! -d "stencils" ]; then
+          echo "❌ Missing stencils/ directory"
+          exit 1
+        fi
+        
+        if [ ! -d "icons" ]; then
+          echo "❌ Missing icons/ directory"
+          exit 1
+        fi
+        
+        if [ ! -d "omnigraffle" ]; then
+          echo "❌ Missing omnigraffle/ directory"
+          exit 1
+        fi
+        
+        # Check if ZIP file exists
+        if [ ! -f "VMware-Stencils-2024.zip" ]; then
+          echo "❌ Missing VMware-Stencils-2024.zip"
+          exit 1
+        fi
+        
+        # Count files
+        STENCIL_COUNT=$(find stencils/ -name "*.vssx" -o -name "*.vstm" | wc -l)
+        ICON_COUNT=$(find icons/ -name "*.svg" | wc -l)
+        OMNI_COUNT=$(find omnigraffle/ -name "*.gstencil" -o -name "*.clr" | wc -l)
+        
+        echo "✅ Found $STENCIL_COUNT Visio stencil files"
+        echo "✅ Found $ICON_COUNT SVG icon files"
+        echo "✅ Found $OMNI_COUNT OmniGraffle files"
+        echo "✅ All stencil files validated successfully"

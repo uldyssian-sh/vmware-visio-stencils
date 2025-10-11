@@ -111,12 +111,6 @@ Utilize `vmware-nsx.svg`, `firewall.svg`, and `switch.svg` for network architect
 
 ## 🎨 Design Guidelines
 
-### VMware Colors
-- **Primary Blue**: #0091DA
-- **Dark Blue**: #0073BA  
-- **Gray**: #5A5A5A
-- **Light Gray**: #F5F5F5
-
 ### Best Practices
 - Use consistent icon sizing (32x32px minimum)
 - Maintain proper spacing and alignment

@@ -10,12 +10,16 @@ jobs:
       - uses: actions/checkout@v5
       - name: Update weekly activity
         run: |
-          mkdir -p .github
-          echo "Weekly activity: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log
+          set -e
+          mkdir -p .github || { echo "Failed to create .github directory"; exit 1; }
+          echo "Weekly activity: $(date +%Y-%m-%d\ %H:%M:%S)" >> .github/weekly-activity.log || { echo "Failed to write activity log"; exit 1; }
           echo "Repository: ${{ github.repository }}" >> .github/weekly-activity.log
           echo "---" >> .github/weekly-activity.log
-      - name: Log activity
+          echo "✅ Weekly activity logged successfully"
+      - name: Commit activity log
         run: |
-          echo "Weekly activity logged: $(date +%Y-%m-%d\ %H:%M:%S)"
-          echo "Repository: ${{ github.repository }}"
-          echo "✅ Weekly activity check completed"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/weekly-activity.log || echo "No changes to commit"
+          git diff --staged --quiet || git commit -m "Update weekly activity log" || echo "No changes to commit"
+        continue-on-error: true

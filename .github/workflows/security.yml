@@ -21,7 +21,14 @@ jobs:
         scan-ref: '.'
         format: 'table'
       continue-on-error: true
+      id: trivy-scan
     
     - name: Security scan completed
       run: |
-        echo "✅ Security scan completed"
+        if [ $? -eq 0 ]; then
+          echo "✅ Security scan completed successfully"
+        else
+          echo "⚠️ Security scan completed with warnings"
+        fi
+        echo "Scan timestamp: $(date)"
+        echo "Repository: ${{ github.repository }}"

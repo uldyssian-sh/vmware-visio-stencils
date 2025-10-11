@@ -15,34 +15,29 @@ jobs:
     
     - name: Validate stencil files
       run: |
+        set -e
         echo "🎨 Validating VMware stencil files..."
         
         # Check if required directories exist
-        if [ ! -d "stencils" ]; then
-          echo "❌ Missing stencils/ directory"
-          exit 1
-        fi
-        
-        if [ ! -d "icons" ]; then
-          echo "❌ Missing icons/ directory"
-          exit 1
-        fi
-        
-        if [ ! -d "omnigraffle" ]; then
-          echo "❌ Missing omnigraffle/ directory"
-          exit 1
-        fi
+        for dir in stencils icons omnigraffle; do
+          if [ ! -d "$dir" ]; then
+            echo "❌ Missing $dir/ directory"
+            echo "Error: Required directory $dir not found"
+            exit 1
+          fi
+        done
         
         # Check if ZIP file exists
         if [ ! -f "VMware-Stencils-2024.zip" ]; then
           echo "❌ Missing VMware-Stencils-2024.zip"
+          echo "Error: Required ZIP file not found"
           exit 1
         fi
         
-        # Count files
-        STENCIL_COUNT=$(find stencils/ -name "*.vssx" -o -name "*.vstm" | wc -l)
-        ICON_COUNT=$(find icons/ -name "*.svg" | wc -l)
-        OMNI_COUNT=$(find omnigraffle/ -name "*.gstencil" -o -name "*.clr" | wc -l)
+        # Count files with error handling
+        STENCIL_COUNT=$(find stencils/ -name "*.vssx" -o -name "*.vstm" 2>/dev/null | wc -l)
+        ICON_COUNT=$(find icons/ -name "*.svg" 2>/dev/null | wc -l)
+        OMNI_COUNT=$(find omnigraffle/ -name "*.gstencil" -o -name "*.clr" 2>/dev/null | wc -l)
         
         echo "✅ Found $STENCIL_COUNT Visio stencil files"
         echo "✅ Found $ICON_COUNT SVG icon files"

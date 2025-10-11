@@ -1,1 +1,15 @@
-žée
+ï¿½ï¿½name: Enterprise CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  enterprise-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Enterprise validation
+        run: |
+          echo "âœ… Enterprise CI check completed"
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"

@@ -1,21 +1,86 @@
-# Configuration
+# Configuration Guide
 
-## Environment Variables
+## Visio Configuration
 
-- `DEBUG`: Enable debug mode (default: false)
-- `LOG_LEVEL`: Logging level (default: INFO)
+### Stencil Paths
+Configure Visio to automatically load VMware stencils:
 
-## Configuration File
+1. **File → Options → Advanced → File Locations**
+2. Add these paths:
+   ```
+   C:\Path\To\vmware-visio-stencils\stencils\
+   ```
 
-Create `config.yml`:
+### Default Templates
+Set VMware template as default:
 
-```yaml
-app:
-  name: vmware-visio-stencils
-  version: "1.0.0"
-  debug: false
+1. **File → Options → Save**
+2. Set **Default file format** to VMware template
+3. Browse to `stencils/vmw_template.vstm`
 
-logging:
-  level: INFO
-  format: json
-```
+### Color Palette
+Import VMware colors:
+
+1. Open `stencils/vmw_colors.vssx`
+2. Colors appear in **Design → Colors**
+3. Set as default color scheme
+
+## OmniGraffle Configuration
+
+### Stencil Library
+Organize VMware stencils:
+
+1. **Window → Stencils**
+2. Create "VMware" folder
+3. Drag stencils to organize
+
+### Color Palette
+Import VMware colors:
+
+1. **Format → Color Panel**
+2. Import `omnigraffle/vmw.clr`
+3. Save as default palette
+
+## Custom Settings
+
+### Icon Sizing
+Recommended icon sizes:
+- **Small diagrams:** 24x24px
+- **Standard diagrams:** 32x32px  
+- **Large diagrams:** 48x48px
+- **Presentations:** 64x64px
+
+### Grid Settings
+Optimal grid configuration:
+- **Grid spacing:** 0.25 inches
+- **Snap to grid:** Enabled
+- **Show grid:** Optional
+
+### Export Settings
+For professional diagrams:
+- **Format:** PNG or SVG
+- **Resolution:** 300 DPI minimum
+- **Background:** Transparent or white
+
+## Advanced Configuration
+
+### Custom Stencils
+Create organization-specific stencils:
+
+1. Copy `vmw_Icons.vssx` as template
+2. Add custom icons
+3. Save with organization name
+4. Distribute to team
+
+### Automation
+Visio automation options:
+- VBA macros for repetitive tasks
+- Shape data for documentation
+- Custom properties for metadata
+
+## Troubleshooting
+
+Common configuration issues:
+- **Stencils not appearing:** Check file paths
+- **Colors not loading:** Verify .vssx file integrity
+- **Template errors:** Ensure Visio version compatibility

@@ -2,46 +2,12 @@
 
 ## Supported Versions
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
+We support security updates for the latest version of this project.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability, please report it by creating a private security advisory on GitHub:
+Please report security vulnerabilities by creating an issue or contacting the maintainers directly.
 
-1. Go to the [Security tab](https://github.com/uldyssian-sh/vmware-visio-stencils/security)
-2. Click "Report a vulnerability"
-3. Provide detailed information about the vulnerability
+## Dependency Management
 
-### What to Include
-
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-- Suggested fix (if available)
-
-### Response Timeline
-
-- **Initial Response**: Within 48 hours
-- **Status Update**: Within 7 days
-- **Resolution**: Within 30 days for critical issues
-
-## Security Measures
-
-### Automated Security Scanning
-
-- **Trivy**: Vulnerability scanning for dependencies and containers
-- **Dependabot**: Automated dependency updates
-- **CodeQL**: Static analysis for security vulnerabilities
-
-### Best Practices
-
-- All commits must be signed and verified
-- Dependencies are regularly updated
-- Security patches are prioritized
-- Minimal attack surface with scoped packages
-
-## Contact
-
-For security-related questions, contact the maintainers through GitHub Issues or Security Advisories.
+This project uses automated dependency scanning with Trivy. Known false positives and low-risk vulnerabilities are documented in `.trivyignore`.

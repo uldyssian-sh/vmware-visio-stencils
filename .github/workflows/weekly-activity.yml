@@ -1,8 +1,16 @@
 name: Weekly Activity
+
 on:
-  workflow_dispatch:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
 permissions:
-  contents: write
+  contents: read
+  security-events: write
+  actions: read
+
 jobs:
   weekly-activity:
     runs-on: ubuntu-latest

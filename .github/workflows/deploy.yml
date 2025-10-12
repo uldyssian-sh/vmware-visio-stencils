@@ -1,15 +1,15 @@
 name: Stencil Validation
 
 on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 
 permissions:
   contents: read
   security-events: write
   actions: read
-
-  push:
-    branches: [main, master]
-  workflow_dispatch:
 
 jobs:
   validate:

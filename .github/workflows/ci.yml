@@ -1,5 +1,11 @@
 name: CI
 on:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
   push:
     branches: [main, master]
   pull_request:

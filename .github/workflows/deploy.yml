@@ -1,6 +1,12 @@
 name: Stencil Validation
 
 on:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
   push:
     branches: [main, master]
   workflow_dispatch:

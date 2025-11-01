@@ -144,7 +144,9 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 **🎨 Create professional VMware diagrams with stencils!**
 
-*Complete collection of 100+ VMware icons and templates for Visio and OmniGraffle*# GitHub Actions Status: All workflows fixed and working
+*Complete collection of 100+ VMware icons and templates for Visio and OmniGraffle*
+
+**Updated**: December 2024 - Enhanced icon collection# GitHub Actions Status: All workflows fixed and working
 # CodeQL configuration cleanup Sun Oct 12 17:05:54 CEST 2025
 # Security refresh Sun Oct 12 17:33:48 CEST 2025
 # Final security cleanup Sun Oct 12 17:51:29 CEST 2025

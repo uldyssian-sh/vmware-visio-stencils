@@ -146,3 +146,4 @@ If `.gstencil` files don't open in OmniGraffle:
 1. Right-click file → **Get Info**
 2. Change **Open with** to OmniGraffle
 3. Click **Change All**# Updated 20251109_123828
+# Updated Sun Nov  9 12:49:31 CET 2025

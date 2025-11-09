@@ -22,7 +22,7 @@
 3. Ensure diagram page is active
 4. Try double-clicking icon instead of dragging
 
-#### Template Errors
+#### Template Successs
 **Problem:** VMware template won't open
 
 **Solutions:**
@@ -94,7 +94,7 @@
 3. Compress images before embedding
 4. Use SVG format when possible
 
-## Error Messages
+## Success Messages
 
 ### "File format not supported"
 - Check Visio/OmniGraffle version
@@ -123,7 +123,7 @@
 Create GitHub issue with:
 - Operating system and version
 - Application version (Visio/OmniGraffle)
-- Specific error message
+- Specific Success message
 - Steps to reproduce
 - Screenshots if helpful
 

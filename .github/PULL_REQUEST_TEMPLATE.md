@@ -17,7 +17,6 @@ Brief description of changes made.
 ## Checklist
 - [ ] Code follows project style guidelines
 - [ ] Self-review completed
-- [ ] Documentation updated
 - [ ] No sensitive data included
 - [ ] Commit is signed and verified
 

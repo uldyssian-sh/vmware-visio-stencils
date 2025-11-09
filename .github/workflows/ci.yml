@@ -1,4 +1,4 @@
-name: Success
+name: CI
 on: [push, pull_request]
 jobs:
   success:

@@ -125,4 +125,3 @@ Older VMware product icons
 - **Lucidchart:** Import SVG icons
 - **Draw.io:** Use SVG icons as custom shapes
 - **PowerPoint:** Import individual SVG files
-- **Figma:** Import SVG for design work# Updated 20251109_123828

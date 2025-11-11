@@ -1,5 +1,11 @@
 # VMware Visio Stencils Collection
 
+[![License](https://img.shields.io/github/license/uldyssian-sh/vmware-visio-stencils?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/vmware-visio-stencils?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/vmware-visio-stencils?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
+
 ## 🎨 Overview
 
 Complete collection of VMware Visio stencils for creating professional infrastructure diagrams. Includes 100+ high-quality icons and templates for all major VMware products and solutions.
@@ -30,6 +36,12 @@ Over 100 scalable vector icons including:
 ### Download All Stencils
 ```bash
 # Clone repository
+
+[![License](https://img.shields.io/github/license/uldyssian-sh/vmware-visio-stencils?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#)
+[![Languages](https://img.shields.io/github/languages/count/uldyssian-sh/vmware-visio-stencils?style=flat-square)](#)
+[![Size](https://img.shields.io/github/repo-size/uldyssian-sh/vmware-visio-stencils?style=flat-square)](#)
+[![Security Scan](https://img.shields.io/badge/security-scanned-green?style=flat-square)](#)
 git clone https://github.com/uldyssian-sh/vmware-visio-stencils.git
 cd vmware-visio-stencils
 

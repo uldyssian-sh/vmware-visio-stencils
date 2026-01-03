@@ -1,0 +1,8 @@
+# Security Status: VERIFIED
+Repository: vmware-visio-stencils
+Workflow: Ultra Secure Contributors Setup
+GitHub Actions: Native verified commits enabled
+Dependabot: Native verified commits enabled
+Manual commits: GPG verified with registered key
+Status: All contributors will have verified commits
+Updated: Sat Jan  3 22:00:59 CET 2026

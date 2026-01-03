@@ -1,0 +1,12 @@
+# vmware-visio-stencils Dependencies
+# Professional enterprise tools
+
+# Security scanning
+bandit>=1.7.5
+safety>=2.3.0
+
+# Code quality
+flake8>=6.0.0
+
+# Documentation
+sphinx>=6.0.0

@@ -142,4 +142,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 **🎨 Create professional VMware diagrams with stencils!**
 
 *Complete collection of 100+ VMware icons and templates for Visio and OmniGraffle*
-⭐ Star this repository if you find it helpful!
+
+---
+
+Maintained by: uldyssian-sh⭐ Star this repository if you find it helpful!Disclaimer: Use of this code is at your own risk. Author bears no responsibility for any damages caused by the code.
